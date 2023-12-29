@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{0263A005-E0BE-4D8F-BC9F-33D03EA9E745}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>track_web</RootNamespace>
+    <AssemblyName>track_web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>track_web.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>track_web.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\trackDB.mdf" />
+    <Content Include="App_Data\trackDB_log.ldf">
+      <DependentUpon>trackDB.mdf</DependentUpon>
+    </Content>
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\responsive.css" />
+    <Content Include="css\style.css" />
+    <Content Include="images\about-img.jpg" />
+    <Content Include="images\client-1.jpg" />
+    <Content Include="images\client-2.jpg" />
+    <Content Include="images\construction.svg" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\maintenance.svg" />
+    <Content Include="images\professional-img.png" />
+    <Content Include="images\s1.png" />
+    <Content Include="images\s2.png" />
+    <Content Include="images\s3.png" />
+    <Content Include="images\slider-img.png" />
+    <Content Include="images\tools.svg" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\jquery-3.4.1.min.js" />
+    <Content Include="View\Admin\City_Page.aspx" />
+    <Content Include="View\Admin\Driver_Page.aspx" />
+    <Content Include="View\Admin\Fuel_Shipment_Page.aspx" />
+    <Content Include="View\Admin\Print_Code.aspx" />
+    <Content Include="View\Admin\Region_Page.aspx" />
+    <Content Include="View\Admin\Station_Page.aspx" />
+    <Content Include="View\Admin\Truck_Page.aspx" />
+    <Content Include="View\Admin\User_Page.aspx" />
+    <Content Include="View\Home\Home_Page.aspx" />
+    <Content Include="View\Security\Check_Page.aspx" />
+    <Content Include="View\Security\Driver_Page.aspx" />
+    <Content Include="View\Security\Stop_Page.aspx" />
+    <Content Include="View\Security\Truck_Page.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\City_Class.vb" />
+    <Compile Include="Model\Driver_Class.vb" />
+    <Compile Include="Model\Fuel_Shipment_Class.vb" />
+    <Compile Include="Model\Module_con.vb" />
+    <Compile Include="Model\Region_Class.vb" />
+    <Compile Include="Model\Station_Class.vb" />
+    <Compile Include="Model\Truck_Class.vb" />
+    <Compile Include="Model\User_Class.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="View\Admin\Admin_Master.Master.designer.vb">
+      <DependentUpon>Admin_Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Admin_Master.Master.vb">
+      <DependentUpon>Admin_Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Admin\City_Page.aspx.designer.vb">
+      <DependentUpon>City_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\City_Page.aspx.vb">
+      <DependentUpon>City_Page.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Driver_Page.aspx.designer.vb">
+      <DependentUpon>Driver_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Driver_Page.aspx.vb">
+      <DependentUpon>Driver_Page.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Fuel_Shipment_Page.aspx.designer.vb">
+      <DependentUpon>Fuel_Shipment_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Fuel_Shipment_Page.aspx.vb">
+      <DependentUpon>Fuel_Shipment_Page.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Print_Code.aspx.designer.vb">
+      <DependentUpon>Print_Code.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Print_Code.aspx.vb">
+      <DependentUpon>Print_Code.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Region_Page.aspx.designer.vb">
+      <DependentUpon>Region_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Region_Page.aspx.vb">
+      <DependentUpon>Region_Page.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Station_Page.aspx.designer.vb">
+      <DependentUpon>Station_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Station_Page.aspx.vb">
+      <DependentUpon>Station_Page.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Truck_Page.aspx.designer.vb">
+      <DependentUpon>Truck_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Truck_Page.aspx.vb">
+      <DependentUpon>Truck_Page.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="View\Admin\User_Page.aspx.designer.vb">
+      <DependentUpon>User_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\User_Page.aspx.vb">
+      <DependentUpon>User_Page.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="View\Home\Home_Page.aspx.designer.vb">
+      <DependentUpon>Home_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Home\Home_Page.aspx.vb">
+      <DependentUpon>Home_Page.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="View\Security\Check_Page.aspx.designer.vb">
+      <DependentUpon>Check_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Security\Check_Page.aspx.vb">
+      <DependentUpon>Check_Page.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="View\Security\Driver_Page.aspx.designer.vb">
+      <DependentUpon>Driver_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Security\Driver_Page.aspx.vb">
+      <DependentUpon>Driver_Page.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="View\Security\Security_Page.Master.designer.vb">
+      <DependentUpon>Security_Page.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\Security\Security_Page.Master.vb">
+      <DependentUpon>Security_Page.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Security\Stop_Page.aspx.designer.vb">
+      <DependentUpon>Stop_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Security\Stop_Page.aspx.vb">
+      <DependentUpon>Stop_Page.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="View\Security\Truck_Page.aspx.designer.vb">
+      <DependentUpon>Truck_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Security\Truck_Page.aspx.vb">
+      <DependentUpon>Truck_Page.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\Code_Report.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="css\style.css.map" />
+    <None Include="css\style.scss" />
+    <None Include="fonts\fontawesome-webfont.ttf" />
+    <None Include="fonts\fontawesome-webfont.woff" />
+    <None Include="fonts\fontawesome-webfont.woff2" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="View\Admin\Admin_Master.Master" />
+    <Content Include="View\Security\Security_Page.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\Home\" />
+    <Folder Include="Driver_img\" />
+    <Folder Include="User_img\" />
+    <Folder Include="View\Station\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52816</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
