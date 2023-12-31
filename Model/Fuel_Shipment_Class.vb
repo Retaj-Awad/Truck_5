@@ -55,4 +55,14 @@ Public Class Fuel_Shipment_Class
         cmd.ExecuteNonQuery()
         con.Close()
     End Sub
+
+    Function Check_StopFuel(ByVal shipment_code)
+        Dim cmd As New SqlCommand("select * from Fuel_Shipment  where shipment_code=@shipment_code and shipment_status=@shipment_status", con)
+        cmd.Parameters.AddWithValue("@shipment_status", "تم ايقاف الشحنة")
+        cmd.Parameters.AddWithValue("@shipment_code", shipment_code)
+        Dim adp As New SqlDataAdapter(cmd)
+        Dim dt As New DataTable
+        adp.Fill(dt)
+        Return dt
+    End Function
 End Class

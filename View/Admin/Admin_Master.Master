@@ -79,6 +79,9 @@
                 <li class="nav-item">
                   <a class="nav-link" href="Fuel_Shipment_Page.aspx">بيانات الشحنة <i class="fa fa-transgender"> </i></a>
                 </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="Notifcation_Page.aspx"> الاشعارات <i class="fa fa-bell"> </i> <asp:Label ID="Label1" runat="server" Text="0" ForeColor="#CC0000"></asp:Label> </a>
+                </li>
                 <li class="nav-item">
                   <a class="nav-link" href="">تتبع شاحنات الوقود GPS <i class="fa fa-map"> </i></a>
                 </li>

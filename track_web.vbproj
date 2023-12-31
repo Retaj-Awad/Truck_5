@@ -115,6 +115,7 @@
     <Content Include="View\Admin\City_Page.aspx" />
     <Content Include="View\Admin\Driver_Page.aspx" />
     <Content Include="View\Admin\Fuel_Shipment_Page.aspx" />
+    <Content Include="View\Admin\Notifcation_Page.aspx" />
     <Content Include="View\Admin\Print_Code.aspx" />
     <Content Include="View\Admin\Region_Page.aspx" />
     <Content Include="View\Admin\Station_Page.aspx" />
@@ -187,6 +188,13 @@
     </Compile>
     <Compile Include="View\Admin\Fuel_Shipment_Page.aspx.vb">
       <DependentUpon>Fuel_Shipment_Page.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Notifcation_Page.aspx.designer.vb">
+      <DependentUpon>Notifcation_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Notifcation_Page.aspx.vb">
+      <DependentUpon>Notifcation_Page.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="View\Admin\Print_Code.aspx.designer.vb">

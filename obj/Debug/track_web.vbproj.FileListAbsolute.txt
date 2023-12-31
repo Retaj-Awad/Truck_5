@@ -6,6 +6,5 @@ C:\Users\home\documents\visual studio 2010\Projects\track_web\track_web\obj\Debu
 C:\Users\home\documents\visual studio 2010\Projects\track_web\track_web\obj\Debug\track_web.dll
 C:\Users\home\documents\visual studio 2010\Projects\track_web\track_web\obj\Debug\track_web.xml
 C:\Users\home\documents\visual studio 2010\Projects\track_web\track_web\obj\Debug\track_web.pdb
-C:\Users\home\documents\visual studio 2010\Projects\track_web\track_web\obj\Debug\track_web.vbprojResolveAssemblyReference.cache
 C:\Users\home\documents\visual studio 2010\Projects\track_web\track_web\obj\Debug\RdlCompile.cache
 C:\Users\home\documents\visual studio 2010\Projects\track_web\track_web\obj\Debug\RdlCompile.compiled

@@ -6,15 +6,15 @@ track_web
 </name>
 </assembly>
 <members>
-<member name="F:track_web.Truck_Page1.GridView1">
+<member name="F:track_web.Notifcation_Page.GridView2">
 	<summary>
-GridView1 control.
+GridView2 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:track_web.Truck_Page1.SqlDataSource1">
+</member><member name="F:track_web.Notifcation_Page.SqlDataSource1">
 	<summary>
 SqlDataSource1 control.
 </summary>
@@ -134,6 +134,22 @@ ContentPlaceHolder1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:track_web.Truck_Page1.GridView1">
+	<summary>
+GridView1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:track_web.Truck_Page1.SqlDataSource1">
+	<summary>
+SqlDataSource1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:track_web.Check_Page.TextBox4">
 	<summary>
 TextBox4 control.
@@ -161,6 +177,14 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:track_web.Check_Page.SqlDataSource1">
 	<summary>
 SqlDataSource1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:track_web.Check_Page.GridView2">
+	<summary>
+GridView2 control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -498,6 +522,14 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:track_web.Admin_Master.LinkButton1">
 	<summary>
 LinkButton1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:track_web.Admin_Master.Label1">
+	<summary>
+Label1 control.
 </summary>
 	<remarks>
 Auto-generated field.

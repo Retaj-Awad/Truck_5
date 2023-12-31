@@ -12,10 +12,9 @@
                     Session("admin") = TextBox1.Text
                     Response.Redirect("~/View/Admin/User_Page.aspx")
 
-                ElseIf dt.Rows(0).Item("user_validity") = "موظف البوابة" Then
-                    Label1.Visible = True
-                    Label1.Text = " البوابة"
-                    Label1.ForeColor = Drawing.Color.Blue
+                ElseIf dt.Rows(0).Item("user_validity") = "موظف بوابة" Then
+                    Session("security") = TextBox1.Text
+                    Response.Redirect("~/View/Security/Check_Page.aspx")
                 Else
                     Label1.Visible = True
                     Label1.Text = " المحطة"
@@ -25,7 +24,10 @@
             Else
                 Label1.Visible = True
                 Label1.Text = " كلمة المرور غير صحيحة"
-                Label1.ForeColor = Drawing.Color.Red
+                Label1.ForeColor = Drawing.Color.Green
+                'this is new comment
+
+
             End If
 
         Else

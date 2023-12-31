@@ -26,7 +26,7 @@
             
           <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
                 DataSourceID="SqlDataSource1" width="1100px" 
-                GridLines="None" EmptyDataText="لا يوجد بيانات لعرضها">
+                GridLines="None" EmptyDataText="لا يوجد بيانات لعرضها" Visible="False">
               <Columns>
                   <asp:BoundField DataField="shipment_code" HeaderText="كود الشحنة" ReadOnly="True" 
                       SortExpression="shipment_code" InsertVisible="False" />
@@ -75,6 +75,44 @@
 
             </asp:SqlDataSource>
             
+            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" 
+                DataSourceID="SqlDataSource1" width="1100px" 
+                GridLines="None" EmptyDataText="لا يوجد بيانات لعرضها" Visible="False">
+              <Columns>
+                  <asp:BoundField DataField="shipment_code" HeaderText="كود الشحنة" ReadOnly="True" 
+                      SortExpression="shipment_code" InsertVisible="False" />
+                  <asp:BoundField DataField="station_name" HeaderText="اسم المحطة" 
+                      SortExpression="station_name" />
+                  <asp:BoundField DataField="city_name" HeaderText="المدينة" 
+                      SortExpression="city_name" />
+                  <asp:BoundField DataField="region_name" HeaderText="المنطقة" 
+                      SortExpression="region_name" />
+                  <asp:BoundField DataField="quantity" HeaderText="الكمية" 
+                      SortExpression="quantity" />
+                  <asp:BoundField DataField="shipment_status" 
+                      HeaderText="حالة الشحنة" SortExpression="shipment_status" />
+                  <asp:TemplateField HeaderText="السائق">
+                      <ItemTemplate>
+                          <asp:HyperLink ID="HyperLink2" runat="server" 
+                              NavigateUrl='<%# Eval("driver_name","~/View/Security/Driver_Page.aspx?driver={0}") %>' 
+                              Text='<%# Eval("driver_name") %>'></asp:HyperLink>
+                      </ItemTemplate>
+                  </asp:TemplateField>
+                  <asp:TemplateField HeaderText="رقم اللوحة">
+                      <ItemTemplate>
+                          <asp:HyperLink ID="HyperLink3" runat="server" 
+                              NavigateUrl='<%# Eval("plate_number","~/View/Security/Truck_Page.aspx?truck={0}") %>' 
+                              Text='<%# Eval("plate_number") %>'></asp:HyperLink>
+                      </ItemTemplate>
+                  </asp:TemplateField>
+                  <asp:TemplateField>
+                      <ItemTemplate>
+                          <asp:Label ID="Label1" runat="server" ForeColor="#CC0000" 
+                              Text="هذه الشحنة موقوفة"></asp:Label>
+                      </ItemTemplate>
+                  </asp:TemplateField>
+              </Columns>
+            </asp:GridView>
           </div>
          </div>
      </div>
