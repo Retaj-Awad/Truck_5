@@ -24,7 +24,8 @@
             Else
                 Label1.Visible = True
                 Label1.Text = " كلمة المرور غير صحيحة"
-                Label1.ForeColor = Drawing.Color.Green
+                Label1.ForeColor = Drawing.Color.Red
+
                 'this is new comment
 
 
