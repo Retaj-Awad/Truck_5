@@ -14,24 +14,30 @@ Public Class User_Class
         Return dt
     End Function
 
-    Sub AddUser(ByVal user_na, ByVal pass, ByVal validity, ByVal img)
-        Dim cmd As New SqlCommand("insert into Users (user_name,user_password,user_img,user_validity) values (@user_name,@user_password,@user_img,@user_validity)", con)
+    Sub AddUser(ByVal user_na, ByVal pass, ByVal validity, ByVal img, ByVal employee_number, ByVal station_number, ByVal city_name)
+        Dim cmd As New SqlCommand("insert into Users (user_name,user_password,user_img,user_validity,employee_number,station_number,city_name) values (@user_name,@user_password,@user_img,@user_validity,@employee_number,@station_number,@city_name)", con)
         cmd.Parameters.AddWithValue("@user_name", user_na)
         cmd.Parameters.AddWithValue("@user_password", pass)
         cmd.Parameters.AddWithValue("@user_img", img)
         cmd.Parameters.AddWithValue("@user_validity", validity)
+        cmd.Parameters.AddWithValue("@employee_number", employee_number)
+        cmd.Parameters.AddWithValue("@station_number", station_number)
+        cmd.Parameters.AddWithValue("@city_name", city_name)
         con.Open()
         cmd.ExecuteNonQuery()
         con.Close()
     End Sub
 
 
-    Sub EdieUser(ByVal user_na, ByVal pass, ByVal validity, ByVal img)
-        Dim cmd As New SqlCommand("update  Users set user_password=@user_password,user_img=@user_img,user_validity =@user_validity  where user_name=@user_name ", con)
+    Sub EdieUser(ByVal user_na, ByVal pass, ByVal validity, ByVal img, ByVal employee_number, ByVal station_number, ByVal city_name)
+        Dim cmd As New SqlCommand("update  Users set user_password=@user_password,user_img=@user_img,user_validity =@user_validity,employee_number=@employee_number,station_number=@station_number,city_name=@city_name  where user_name=@user_name ", con)
         cmd.Parameters.AddWithValue("@user_name", user_na)
         cmd.Parameters.AddWithValue("@user_password", pass)
         cmd.Parameters.AddWithValue("@user_img", img)
         cmd.Parameters.AddWithValue("@user_validity", validity)
+        cmd.Parameters.AddWithValue("@employee_number", employee_number)
+        cmd.Parameters.AddWithValue("@station_number", station_number)
+        cmd.Parameters.AddWithValue("@city_name", city_name)
         con.Open()
         cmd.ExecuteNonQuery()
         con.Close()
@@ -47,13 +53,15 @@ Public Class User_Class
         con.Close()
     End Sub
 
-    Sub EdieUserStation(ByVal user_na, ByVal pass)
-        Dim cmd As New SqlCommand("update  Users set user_password=@user_password  where user_name=@user_name ", con)
-        cmd.Parameters.AddWithValue("@user_name", user_na)
-        cmd.Parameters.AddWithValue("@user_password", pass)
+
+    Sub DeleteUserStation(ByVal station_number)
+        Dim cmd As New SqlCommand("delete from Users where station_number=@station_number ", con)
+        cmd.Parameters.AddWithValue("@station_number", station_number)
         con.Open()
         cmd.ExecuteNonQuery()
         con.Close()
     End Sub
+
+
 
 End Class

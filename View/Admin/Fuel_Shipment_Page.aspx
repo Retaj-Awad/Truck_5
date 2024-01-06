@@ -111,8 +111,6 @@
                       SortExpression="quantity" />
                   <asp:BoundField DataField="plate_number" HeaderText="رقم اللوحة" 
                       SortExpression="plate_number" />
-                  <asp:BoundField DataField="shipment_status" 
-                      HeaderText="حالة الشحنة" SortExpression="shipment_status" />
                   <asp:BoundField DataField="user_name" HeaderText="اضيف بواسطة" 
                       SortExpression="user_name" />
               </Columns>

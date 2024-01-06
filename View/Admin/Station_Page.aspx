@@ -39,12 +39,6 @@
                 </asp:SqlDataSource>
             </div>
             <br/>
-            <div>
-              <asp:TextBox ID="TextBox2" runat="server" placeholder="ادخل كلمة المرور" ForeColor="Black" MaxLength="12"></asp:TextBox>
-            </div>
-            <div>
-              <asp:TextBox ID="TextBox3" runat="server" placeholder="ادخل تاكيد كلمة المرور" ForeColor="Black" MaxLength="12"></asp:TextBox>
-            </div>
             </div >
 
             <div>

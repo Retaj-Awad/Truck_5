@@ -32,6 +32,60 @@ Partial Public Class Check_Page
     Protected WithEvents LinkButton2 As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
+    '''HyperLink_driver control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents HyperLink_driver As Global.System.Web.UI.WebControls.HyperLink
+
+    '''<summary>
+    '''HyperLink_truk control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents HyperLink_truk As Global.System.Web.UI.WebControls.HyperLink
+
+    '''<summary>
+    '''Label_city control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label_city As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Label_region control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label_region As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Label_station control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label_station As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Label_cap control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label_cap As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''GridView1 control.
     '''</summary>
     '''<remarks>

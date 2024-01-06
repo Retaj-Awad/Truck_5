@@ -25,4 +25,13 @@ Public Class Truck_Class
         adp.Fill(dt)
         Return dt
     End Function
+
+    Function Show_Truck(ByVal plate_number)
+        Dim cmd As New SqlCommand("select * from  Truck  where plate_number=@plate_number", con)
+        cmd.Parameters.AddWithValue("@plate_number", plate_number)
+        Dim adp As New SqlDataAdapter(cmd)
+        Dim dt As New DataTable
+        adp.Fill(dt)
+        Return dt
+    End Function
 End Class

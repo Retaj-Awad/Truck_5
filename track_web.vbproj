@@ -139,6 +139,7 @@
     <Compile Include="Model\Driver_Class.vb" />
     <Compile Include="Model\Fuel_Shipment_Class.vb" />
     <Compile Include="Model\Module_con.vb" />
+    <Compile Include="Model\Record_Class.vb" />
     <Compile Include="Model\Region_Class.vb" />
     <Compile Include="Model\Station_Class.vb" />
     <Compile Include="Model\Truck_Class.vb" />

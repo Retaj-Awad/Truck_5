@@ -4,6 +4,7 @@
      <div class="container">
       <div class="heading_container" dir="rtl">
         <h2>
+            
            بيانات الشحنــــة
         </h2>
       </div>
@@ -15,59 +16,106 @@
                     <td>
                     <br/>
                         <asp:TextBox ID="TextBox4" runat="server" placeholder="ادخل كود الشحنة" 
-                            ForeColor="Black" MaxLength="50" Width="1000px"></asp:TextBox>
+                            ForeColor="Black" MaxLength="50" Width="800px"></asp:TextBox>
                         </td>
                     <td>
                      <asp:LinkButton ID="LinkButton2" runat="server" class="btn btn-success"  Height="50"  Width="200px">عــــرض البيانــــــات <i class="fa fa-search"></i></asp:LinkButton>
                 </td>
                 </tr>
             </table>
+            <br/>
+            <table>
+                <tr>
+                    <td>
+                     <h5>
+            
+         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; اسم السائق
+                    </h5>
+                    </td>
+                    <td>
+                     <h5>
+            
+           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; رقم اللوحة
+                    </h5>
+                    </td>
+                    <td>
+                    <h5>
+            
+           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;المدينة
+                    </h5>
+                    </td>
+                    <td>
+                    <h5>
+            
+         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;المنطقة
+                    </h5>
+                   </td>
+                    <td>
+                    <h5>
+            
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;المحطة
+                    </h5>
+                    </td>
+                    <td>
+                    <h5>
+            
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;الكمية
+                    </h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <asp:HyperLink ID="HyperLink_driver" runat="server"></asp:HyperLink>
+                    </td>
+                    <td>
+                    <asp:HyperLink ID="HyperLink_truk" runat="server"></asp:HyperLink>
+                    </td>
+                    <td>
+                    <asp:Label ID="Label_city" runat="server" Text="Label"></asp:Label>
+                    </td>
+                    <td>
+                    <asp:Label ID="Label_region" runat="server" Text="Label"></asp:Label>
+                    </td>
+                    <td>
+                    <asp:Label ID="Label_station" runat="server" Text="Label"></asp:Label>
+                    </td>
+                    <td>
+                    <asp:Label ID="Label_cap" runat="server" Text="Label"></asp:Label>
+                    </td>
+                </tr>
+            </table>
+            <br/>
+            <br/>
+             <h3 align="right">
+            
+           سجـــل الشحنــــة
+             </h3>
+             <br/>
+
 
             
           <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
-                DataSourceID="SqlDataSource1" width="1100px" 
-                GridLines="None" EmptyDataText="لا يوجد بيانات لعرضها" Visible="False">
+                DataSourceID="SqlDataSource1" width="700px" 
+                GridLines="None" EmptyDataText="لا يوجد بيانات لعرضها">
               <Columns>
-                  <asp:BoundField DataField="shipment_code" HeaderText="كود الشحنة" ReadOnly="True" 
-                      SortExpression="shipment_code" InsertVisible="False" />
-                  <asp:BoundField DataField="station_name" HeaderText="اسم المحطة" 
-                      SortExpression="station_name" />
-                  <asp:BoundField DataField="city_name" HeaderText="المدينة" 
-                      SortExpression="city_name" />
-                  <asp:BoundField DataField="region_name" HeaderText="المنطقة" 
-                      SortExpression="region_name" />
-                  <asp:BoundField DataField="quantity" HeaderText="الكمية" 
-                      SortExpression="quantity" />
-                  <asp:BoundField DataField="shipment_status" 
-                      HeaderText="حالة الشحنة" SortExpression="shipment_status" />
-                  <asp:TemplateField HeaderText="السائق">
-                      <ItemTemplate>
-                          <asp:HyperLink ID="HyperLink2" runat="server" 
-                              NavigateUrl='<%# Eval("driver_name","~/View/Security/Driver_Page.aspx?driver={0}") %>' 
-                              Text='<%# Eval("driver_name") %>'></asp:HyperLink>
-                      </ItemTemplate>
-                  </asp:TemplateField>
-                  <asp:TemplateField HeaderText="رقم اللوحة">
-                      <ItemTemplate>
-                          <asp:HyperLink ID="HyperLink3" runat="server" 
-                              NavigateUrl='<%# Eval("plate_number","~/View/Security/Truck_Page.aspx?truck={0}") %>' 
-                              Text='<%# Eval("plate_number") %>'></asp:HyperLink>
-                      </ItemTemplate>
-                  </asp:TemplateField>
-                  <asp:TemplateField>
-                      <ItemTemplate>
-                 <asp:HyperLink ID="HyperLink1" runat="server" class="btn btn-danger" 
-                              Height="50px" Width="200px" ForeColor="White" 
-                              NavigateUrl='<%# Eval("shipment_code","~/View/Security/Stop_Page.aspx?code={0}") %>'> ايقــاف شحنــة <i  class="fa fa-warning"></i></asp:HyperLink>
-                      </ItemTemplate>
-                  </asp:TemplateField>
+                  <asp:BoundField DataField="record_id" HeaderText="رقم السجل" 
+                      SortExpression="record_id" InsertVisible="False" ReadOnly="True" />
+                  <asp:BoundField DataField="record_data" HeaderText="التاريخ" 
+                      SortExpression="record_data" DataFormatString="{0:d}" />
+                  <asp:BoundField DataField="record_time" HeaderText="الوقت" 
+                      SortExpression="record_time" />
+                  <asp:BoundField DataField="shipment_status" HeaderText="الحالة" 
+                      SortExpression="shipment_status" />
+                  <asp:BoundField DataField="user_name" HeaderText="اضيف بواسطة" 
+                      SortExpression="user_name" />
               </Columns>
             </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:Track_Connection %>" 
                 
                 
-                SelectCommand="SELECT Truck.plate_number, Driver.driver_name, Stations.station_name, Fuel_Shipment.shipment_code, Fuel_Shipment.region_name, Fuel_Shipment.quantity, Fuel_Shipment.shipment_status, Stations.city_name FROM Fuel_Shipment INNER JOIN Truck ON Fuel_Shipment.plate_number = Truck.plate_number INNER JOIN Driver ON Truck.license_number = Driver.license_number INNER JOIN Stations ON Fuel_Shipment.station_number = Stations.station_number WHERE (Fuel_Shipment.shipment_code = @shipment_code)">
+                
+                SelectCommand="SELECT Truck.plate_number, Driver.driver_name, Stations.station_name, Fuel_Shipment.shipment_code, Fuel_Shipment.region_name, Fuel_Shipment.quantity, Stations.city_name, Record_fuel.record_id, Record_fuel.record_data, Record_fuel.record_time, Record_fuel.shipment_status, Record_fuel.user_name FROM Fuel_Shipment INNER JOIN Truck ON Fuel_Shipment.plate_number = Truck.plate_number INNER JOIN Driver ON Truck.license_number = Driver.license_number INNER JOIN Stations ON Fuel_Shipment.station_number = Stations.station_number INNER JOIN Record_fuel ON Fuel_Shipment.shipment_code = Record_fuel.shipment_code WHERE (Fuel_Shipment.shipment_code = @shipment_code)">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="TextBox4" Name="shipment_code" 
                         PropertyName="Text" />
@@ -79,38 +127,30 @@
                 DataSourceID="SqlDataSource1" width="1100px" 
                 GridLines="None" EmptyDataText="لا يوجد بيانات لعرضها" Visible="False">
               <Columns>
-                  <asp:BoundField DataField="shipment_code" HeaderText="كود الشحنة" ReadOnly="True" 
-                      SortExpression="shipment_code" InsertVisible="False" />
-                  <asp:BoundField DataField="station_name" HeaderText="اسم المحطة" 
+                  <asp:BoundField DataField="plate_number" HeaderText="plate_number" 
+                      SortExpression="plate_number" />
+                  <asp:BoundField DataField="driver_name" HeaderText="driver_name" 
+                      SortExpression="driver_name" />
+                  <asp:BoundField DataField="station_name" HeaderText="station_name" 
                       SortExpression="station_name" />
-                  <asp:BoundField DataField="city_name" HeaderText="المدينة" 
-                      SortExpression="city_name" />
-                  <asp:BoundField DataField="region_name" HeaderText="المنطقة" 
+                  <asp:BoundField DataField="shipment_code" HeaderText="shipment_code" 
+                      SortExpression="shipment_code" InsertVisible="False" ReadOnly="True" />
+                  <asp:BoundField DataField="region_name" HeaderText="region_name" 
                       SortExpression="region_name" />
-                  <asp:BoundField DataField="quantity" HeaderText="الكمية" 
-                      SortExpression="quantity" />
-                  <asp:BoundField DataField="shipment_status" 
-                      HeaderText="حالة الشحنة" SortExpression="shipment_status" />
-                  <asp:TemplateField HeaderText="السائق">
-                      <ItemTemplate>
-                          <asp:HyperLink ID="HyperLink2" runat="server" 
-                              NavigateUrl='<%# Eval("driver_name","~/View/Security/Driver_Page.aspx?driver={0}") %>' 
-                              Text='<%# Eval("driver_name") %>'></asp:HyperLink>
-                      </ItemTemplate>
-                  </asp:TemplateField>
-                  <asp:TemplateField HeaderText="رقم اللوحة">
-                      <ItemTemplate>
-                          <asp:HyperLink ID="HyperLink3" runat="server" 
-                              NavigateUrl='<%# Eval("plate_number","~/View/Security/Truck_Page.aspx?truck={0}") %>' 
-                              Text='<%# Eval("plate_number") %>'></asp:HyperLink>
-                      </ItemTemplate>
-                  </asp:TemplateField>
-                  <asp:TemplateField>
-                      <ItemTemplate>
-                          <asp:Label ID="Label1" runat="server" ForeColor="#CC0000" 
-                              Text="هذه الشحنة موقوفة"></asp:Label>
-                      </ItemTemplate>
-                  </asp:TemplateField>
+                  <asp:BoundField DataField="quantity" 
+                      HeaderText="quantity" SortExpression="quantity" />
+                  <asp:BoundField DataField="city_name" HeaderText="city_name" 
+                      SortExpression="city_name" />
+                  <asp:BoundField DataField="record_id" HeaderText="record_id" 
+                      InsertVisible="False" ReadOnly="True" SortExpression="record_id" />
+                  <asp:BoundField DataField="record_data" HeaderText="record_data" 
+                      SortExpression="record_data" />
+                  <asp:BoundField DataField="record_time" HeaderText="record_time" 
+                      SortExpression="record_time" />
+                  <asp:BoundField DataField="shipment_status" HeaderText="shipment_status" 
+                      SortExpression="shipment_status" />
+                  <asp:BoundField DataField="user_name" HeaderText="user_name" 
+                      SortExpression="user_name" />
               </Columns>
             </asp:GridView>
           </div>

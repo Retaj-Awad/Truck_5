@@ -18,4 +18,12 @@ Public Class Driver_Class
         con.Close()
     End Sub
 
+    Function Show_Driver(ByVal license_number)
+        Dim cmd As New SqlCommand("select * from  Driver  where license_number=@license_number", con)
+        cmd.Parameters.AddWithValue("@license_number", license_number)
+        Dim adp As New SqlDataAdapter(cmd)
+        Dim dt As New DataTable
+        adp.Fill(dt)
+        Return dt
+    End Function
 End Class

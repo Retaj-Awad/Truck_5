@@ -21,16 +21,51 @@
             </div>
             <div>
             <h6 class="text-right">صلاحية المستخدم</h6>
-            <asp:DropDownList ID="DropDownList1" runat="server" class="form-control" >
+            <asp:DropDownList ID="DropDownList1" runat="server" class="form-control" AutoPostBack="True">
+                 <asp:ListItem>اختر الصلاحية..</asp:ListItem>
+                 <asp:ListItem>موظف بوابة</asp:ListItem>
                 <asp:ListItem>موظف شركة البريقة</asp:ListItem>
-                <asp:ListItem>موظف بوابة</asp:ListItem>
+                 <asp:ListItem>موظف المحطة</asp:ListItem>
                 </asp:DropDownList>
             </div>
+            <br/>
+            <div>
+              <asp:TextBox ID="TextBox5" runat="server" placeholder="ادخل الرقم الوظيفي" ForeColor="Black" ReadOnly="True"></asp:TextBox>
+            </div>
+
+            <div>
+            <asp:Label ID="Label2" runat="server" Visible="False"></asp:Label>
+            <h6 class="text-right">اسم المحطة</h6>
+            <asp:DropDownList ID="DropDownList2" runat="server" class="form-control" 
+                    AutoPostBack="True" Enabled="False" DataSourceID="SqlDataSource2" 
+                    DataTextField="station_name" DataValueField="station_number">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
+                    ConnectionString="<%$ ConnectionStrings:Track_Connection %>" 
+                    SelectCommand="SELECT [station_number], [station_name] FROM [Stations]">
+                </asp:SqlDataSource>
+            </div>
+            <br/>
+            <div>
+            <asp:Label ID="Label3" runat="server" Visible="False"></asp:Label>
+            <h6 class="text-right">بوابة مدينة</h6>
+            <asp:DropDownList ID="DropDownList3" runat="server" class="form-control" 
+                    AutoPostBack="True" Enabled="False" DataSourceID="SqlDataSource4" 
+                    DataTextField="city_name" DataValueField="city_name">
+                </asp:DropDownList>
+
+            <asp:SqlDataSource ID="SqlDataSource4" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:Track_Connection %>" 
+                SelectCommand="SELECT * FROM [City]"></asp:SqlDataSource>
+
+            </div>
+             <br/>
             <div>
             <asp:Label ID="Label_img" runat="server" Text="Label" Visible="False"></asp:Label>
             <h6 class="text-right">صورة المستخدم</h6>
             <asp:FileUpload ID="FileUpload1" runat="server" ForeColor="Black"></asp:FileUpload>
             </div>
+
             <div >
               <asp:Button ID="Button1" runat="server" Text="حفــــــظ البيانــــــات" class="btn-primary"></asp:Button>
 
@@ -71,7 +106,7 @@
 
           <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
                 DataKeyNames="user_name" DataSourceID="SqlDataSource1" width="600px" 
-                GridLines="None">
+                GridLines="None" AllowPaging="True" PageSize="5">
               <Columns>
                   <asp:BoundField DataField="user_name" HeaderText="اسم المستخدم" ReadOnly="True" 
                       SortExpression="user_name" />
@@ -87,11 +122,7 @@
             </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:Track_Connection %>" 
-                SelectCommand="SELECT * FROM [Users] WHERE ([user_validity] &lt;&gt; @user_validity)">
-                <SelectParameters>
-                    <asp:Parameter DefaultValue="موظف المحطة" Name="user_validity" Type="String" />
-                </SelectParameters>
-
+                SelectCommand="SELECT * FROM [Users] ">
             </asp:SqlDataSource>
             
           </div>
