@@ -29,6 +29,11 @@
               <asp:TextBox ID="TextBox6" runat="server" placeholder="ادخل لون الشاحنة" ForeColor="Black" MaxLength="50"></asp:TextBox>
             </div>
 
+            <div>
+              <asp:TextBox ID="TextBox8" runat="server" placeholder="ادخل رقم المقطورة" ForeColor="Black" MaxLength="50"></asp:TextBox>
+            </div>
+
+
              <div>
               <asp:TextBox ID="TextBox7" runat="server" placeholder="ادخل سعة الشاحنة" ForeColor="Black" MaxLength="50"></asp:TextBox>
             </div>
@@ -90,6 +95,8 @@
                       SortExpression="Truck_type" />
                   <asp:BoundField DataField="Color" HeaderText="اللون" 
                       SortExpression="Color" />
+                  <asp:BoundField DataField="trailer_number" HeaderText="رقم المقطورة" 
+                      SortExpression="trailer_number" />
                   <asp:BoundField DataField="transport_capacity" HeaderText="السعة/لتر" 
                       SortExpression="transport_capacity" />
                   <asp:BoundField DataField="license_number" 

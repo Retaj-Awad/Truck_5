@@ -37,7 +37,7 @@
             <asp:Label ID="Label2" runat="server" Visible="False"></asp:Label>
             <h6 class="text-right">اسم المحطة</h6>
             <asp:DropDownList ID="DropDownList2" runat="server" class="form-control" 
-                    AutoPostBack="True" Enabled="False" DataSourceID="SqlDataSource2" 
+                    AutoPostBack="True" Enabled="False"  DataSourceID="SqlDataSource2" 
                     DataTextField="station_name" DataValueField="station_number">
                 </asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" 

@@ -16,12 +16,18 @@
                     <td>
                     <br/>
                         <asp:TextBox ID="TextBox4" runat="server" placeholder="ادخل كود الشحنة" 
-                            ForeColor="Black" MaxLength="50" Width="800px"></asp:TextBox>
+                            ForeColor="Black" MaxLength="50" Width="400px"></asp:TextBox>
                         </td>
                     <td>
                      <asp:LinkButton ID="LinkButton2" runat="server" class="btn btn-success"  Height="50"  Width="200px">عــــرض البيانــــــات <i class="fa fa-search"></i></asp:LinkButton>
                 </td>
-                </tr>
+                 </tr>
+                 <tr>
+                 <td>
+                <br/>
+              <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
+              </td>
+               </tr>
             </table>
             <br/>
             <table>
@@ -71,16 +77,16 @@
                     <asp:HyperLink ID="HyperLink_truk" runat="server"></asp:HyperLink>
                     </td>
                     <td>
-                    <asp:Label ID="Label_city" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="Label_city" runat="server" Text=""></asp:Label>
                     </td>
                     <td>
-                    <asp:Label ID="Label_region" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="Label_region" runat="server" Text=""></asp:Label>
                     </td>
                     <td>
-                    <asp:Label ID="Label_station" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="Label_station" runat="server" Text=""></asp:Label>
                     </td>
                     <td>
-                    <asp:Label ID="Label_cap" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="Label_cap" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
             </table>
@@ -95,8 +101,8 @@
 
             
           <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
-                DataSourceID="SqlDataSource1" width="700px" 
-                GridLines="None" EmptyDataText="لا يوجد بيانات لعرضها">
+                DataSourceID="SqlDataSource1" width="1200px" 
+                GridLines="None">
               <Columns>
                   <asp:BoundField DataField="record_id" HeaderText="رقم السجل" 
                       SortExpression="record_id" InsertVisible="False" ReadOnly="True" />
@@ -106,6 +112,8 @@
                       SortExpression="record_time" />
                   <asp:BoundField DataField="shipment_status" HeaderText="الحالة" 
                       SortExpression="shipment_status" />
+                  <asp:BoundField DataField="Expr1" HeaderText="المدينة" SortExpression="Expr1" />
+                  <asp:BoundField DataField="note" HeaderText="الملاحظات" SortExpression="note" />
                   <asp:BoundField DataField="user_name" HeaderText="اضيف بواسطة" 
                       SortExpression="user_name" />
               </Columns>
@@ -115,7 +123,9 @@
                 
                 
                 
-                SelectCommand="SELECT Truck.plate_number, Driver.driver_name, Stations.station_name, Fuel_Shipment.shipment_code, Fuel_Shipment.region_name, Fuel_Shipment.quantity, Stations.city_name, Record_fuel.record_id, Record_fuel.record_data, Record_fuel.record_time, Record_fuel.shipment_status, Record_fuel.user_name FROM Fuel_Shipment INNER JOIN Truck ON Fuel_Shipment.plate_number = Truck.plate_number INNER JOIN Driver ON Truck.license_number = Driver.license_number INNER JOIN Stations ON Fuel_Shipment.station_number = Stations.station_number INNER JOIN Record_fuel ON Fuel_Shipment.shipment_code = Record_fuel.shipment_code WHERE (Fuel_Shipment.shipment_code = @shipment_code)">
+                
+                
+                SelectCommand="SELECT Truck.plate_number, Driver.driver_name, Stations.station_name, Fuel_Shipment.shipment_code, Fuel_Shipment.region_name, Fuel_Shipment.quantity, Stations.city_name, Record_fuel.record_id, Record_fuel.record_data, Record_fuel.record_time, Record_fuel.shipment_status, Record_fuel.user_name, Users.city_name AS Expr1, Record_fuel.note FROM Fuel_Shipment INNER JOIN Truck ON Fuel_Shipment.plate_number = Truck.plate_number INNER JOIN Driver ON Truck.license_number = Driver.license_number INNER JOIN Stations ON Fuel_Shipment.station_number = Stations.station_number INNER JOIN Record_fuel ON Fuel_Shipment.shipment_code = Record_fuel.shipment_code INNER JOIN Users ON Record_fuel.user_name = Users.user_name WHERE (Fuel_Shipment.shipment_code = @shipment_code)">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="TextBox4" Name="shipment_code" 
                         PropertyName="Text" />
@@ -123,36 +133,36 @@
 
             </asp:SqlDataSource>
             
-            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" 
-                DataSourceID="SqlDataSource1" width="1100px" 
-                GridLines="None" EmptyDataText="لا يوجد بيانات لعرضها" Visible="False">
-              <Columns>
-                  <asp:BoundField DataField="plate_number" HeaderText="plate_number" 
-                      SortExpression="plate_number" />
-                  <asp:BoundField DataField="driver_name" HeaderText="driver_name" 
-                      SortExpression="driver_name" />
-                  <asp:BoundField DataField="station_name" HeaderText="station_name" 
-                      SortExpression="station_name" />
-                  <asp:BoundField DataField="shipment_code" HeaderText="shipment_code" 
-                      SortExpression="shipment_code" InsertVisible="False" ReadOnly="True" />
-                  <asp:BoundField DataField="region_name" HeaderText="region_name" 
-                      SortExpression="region_name" />
-                  <asp:BoundField DataField="quantity" 
-                      HeaderText="quantity" SortExpression="quantity" />
-                  <asp:BoundField DataField="city_name" HeaderText="city_name" 
-                      SortExpression="city_name" />
-                  <asp:BoundField DataField="record_id" HeaderText="record_id" 
-                      InsertVisible="False" ReadOnly="True" SortExpression="record_id" />
-                  <asp:BoundField DataField="record_data" HeaderText="record_data" 
-                      SortExpression="record_data" />
-                  <asp:BoundField DataField="record_time" HeaderText="record_time" 
-                      SortExpression="record_time" />
-                  <asp:BoundField DataField="shipment_status" HeaderText="shipment_status" 
-                      SortExpression="shipment_status" />
-                  <asp:BoundField DataField="user_name" HeaderText="user_name" 
-                      SortExpression="user_name" />
-              </Columns>
-            </asp:GridView>
+           
+           <br/>
+           <br/>
+           <table>
+                <tr>
+                    <td>
+                   <h4 align="right">حدد حالة الشحنة</h4>
+                       <asp:DropDownList ID="DropDownList1" runat="server" class=" form-control"  Height="50"  Width="400px">
+                           <asp:ListItem>تم التأكيد</asp:ListItem>
+                           <asp:ListItem>تم الايقاف</asp:ListItem>
+                           <asp:ListItem>تم الافراج</asp:ListItem>
+                        </asp:DropDownList> 
+                        </td>
+                     <td>
+                    <br/>
+                     <asp:LinkButton ID="LinkButton1" runat="server" class="btn btn-success"  Height="50"
+                     Width="200px" Visible="False">ارســـال البيانــــــات <i class="fa fa-send"></i></asp:LinkButton>
+                     <br/>
+                     <asp:Label ID="Label2" runat="server" Text="Label" Visible="False"></asp:Label>
+                   </td>
+                        </tr>
+                         <tr>
+                      <td>
+                      <br/>
+                        <asp:TextBox ID="TextBox1" runat="server" placeholder="ملاحظات" 
+                            ForeColor="Black" MaxLength="50" Width="400px" TextMode="MultiLine" class=" form-control" ></asp:TextBox>
+                    </td>
+                    </tr>
+            </table>
+            
           </div>
          </div>
      </div>

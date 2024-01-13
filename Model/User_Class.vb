@@ -14,6 +14,15 @@ Public Class User_Class
         Return dt
     End Function
 
+    Function ShowUser_employee_number(ByVal employee_number)
+        Dim cmd As New SqlCommand("select * from Users where employee_number=@employee_number", con)
+        cmd.Parameters.AddWithValue("@employee_number", employee_number)
+        Dim adp As New SqlDataAdapter(cmd)
+        Dim dt As New DataTable
+        adp.Fill(dt)
+        Return dt
+    End Function
+
     Sub AddUser(ByVal user_na, ByVal pass, ByVal validity, ByVal img, ByVal employee_number, ByVal station_number, ByVal city_name)
         Dim cmd As New SqlCommand("insert into Users (user_name,user_password,user_img,user_validity,employee_number,station_number,city_name) values (@user_name,@user_password,@user_img,@user_validity,@employee_number,@station_number,@city_name)", con)
         cmd.Parameters.AddWithValue("@user_name", user_na)
@@ -61,6 +70,9 @@ Public Class User_Class
         cmd.ExecuteNonQuery()
         con.Close()
     End Sub
+
+
+
 
 
 

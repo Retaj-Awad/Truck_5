@@ -61,11 +61,19 @@ Public Class User_Page
             End If
         End If
 
-        Dim dt As DataTable = obj_User.ShowUser(TextBox4.Text)
+        Dim dt As DataTable = obj_User.ShowUser(TextBox1.Text)
         If dt.Rows.Count > 0 Then
             Label1.Visible = True
             Label1.ForeColor = Drawing.Color.Red
             Label1.Text = "عفوا اسم المستخدم  مسجل  مسبقا"
+            Exit Sub
+        End If
+
+        Dim dt2 As DataTable = obj_User.ShowUser_employee_number(TextBox5.Text)
+        If dt2.Rows.Count > 0 Then
+            Label1.Visible = True
+            Label1.ForeColor = Drawing.Color.Red
+            Label1.Text = "عفوا الرقم الوظيفي  مسجل  مسبقا"
             Exit Sub
         End If
 
@@ -78,10 +86,14 @@ Public Class User_Page
 
         If DropDownList1.Text = "موظف المحطة" Then
             Label2.Text = DropDownList2.SelectedValue
-        End If
-        If DropDownList1.Text = "موظف بوابة" Then
+            Dim obj As New Station_Class
+            Dim dt1 As DataTable = obj.ShowStation(DropDownList2.SelectedValue)
+            Label3.Text = dt1.Rows(0).Item("city_name")
+        Else
             Label3.Text = DropDownList3.SelectedValue
+
         End If
+
         obj_User.AddUser(TextBox1.Text, TextBox2.Text, DropDownList1.Text, path, TextBox5.Text, Label2.Text, Label3.Text)
         Label1.Visible = True
         Label1.ForeColor = Drawing.Color.Green
@@ -93,6 +105,7 @@ Public Class User_Page
 
 
     Private Sub LinkButton1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LinkButton1.Click
+        Label1.Visible = False   
         Dim dt As DataTable = obj_User.ShowUser(TextBox4.Text)
         If dt.Rows.Count > 0 Then
             TextBox1.Text = dt.Rows(0).Item("user_name")
@@ -106,7 +119,20 @@ Public Class User_Page
             LinkButton3.Visible = True
             Button1.Visible = False
 
+            If DropDownList1.Text = "موظف شركة البريقة" Then
+                TextBox5.ReadOnly = False
+            End If
 
+
+            If DropDownList1.Text = "موظف المحطة" Then
+                DropDownList2.Enabled = True
+                DropDownList3.Enabled = False
+                DropDownList2.SelectedValue = dt.Rows(0).Item("station_number")
+            Else
+                DropDownList2.Enabled = False
+                DropDownList3.Enabled = True
+                DropDownList3.Text = dt.Rows(0).Item("city_name")
+            End If
         Else
             Label1.Visible = True
             Label1.ForeColor = Drawing.Color.Red
@@ -159,9 +185,24 @@ Public Class User_Page
         If DropDownList1.Text = "موظف المحطة" Then
             Label2.Text = DropDownList2.SelectedValue
         End If
-        If DropDownList1.Text = "موظف بوابة" Then
+        If DropDownList1.Text = "موظف المحطة" Then
+            Label2.Text = DropDownList2.SelectedValue
+            Dim obj As New Station_Class
+            Dim dt1 As DataTable = obj.ShowStation(DropDownList2.SelectedValue)
+            Label3.Text = dt1.Rows(0).Item("city_name")
+        Else
             Label3.Text = DropDownList3.SelectedValue
+
         End If
+
+        Dim dt2 As DataTable = obj_User.ShowUser_employee_number(TextBox5.Text)
+        If dt2.Rows.Count > 0 Then
+            Label1.Visible = True
+            Label1.ForeColor = Drawing.Color.Red
+            Label1.Text = "عفوا الرقم الوظيفي  مسجل  مسبقا"
+            Exit Sub
+        End If
+
 
         obj_User.EdieUser(TextBox1.Text, TextBox2.Text, DropDownList1.Text, path, TextBox5.Text, Label2.Text, Label3.Text)
         Label1.Visible = True
@@ -187,13 +228,11 @@ Public Class User_Page
         End If
         If DropDownList1.Text = "موظف المحطة" Then
             DropDownList2.Enabled = True
+            DropDownList3.Enabled = False
+
         Else
             DropDownList2.Enabled = False
-        End If
-        If DropDownList1.Text = "موظف بوابة" Then
             DropDownList3.Enabled = True
-        Else
-            DropDownList3.Enabled = False
         End If
     End Sub
 End Class

@@ -1,8 +1,10 @@
-﻿Public Class Home_Page
+﻿
+Public Class Home_Page
     Inherits System.Web.UI.Page
 
 
     Dim obj As New User_Class
+
 
     Private Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click
         Dim dt As DataTable = obj.ShowUser(TextBox1.Text)

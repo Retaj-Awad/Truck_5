@@ -5,9 +5,11 @@ Imports System.Data
 Public Class City_Class
 
 
-    Sub AddCity(ByVal city_name)
-        Dim cmd As New SqlCommand("insert into City (city_name) values (@city_name)", con)
+    Sub AddCity(ByVal city_name, ByVal minimum_defult_time, ByVal highest_defult_time)
+        Dim cmd As New SqlCommand("insert into City (city_name,minimum_defult_time,highest_defult_time) values (@city_name,@minimum_defult_time,@highest_defult_time)", con)
         cmd.Parameters.AddWithValue("@city_name", city_name)
+        cmd.Parameters.AddWithValue("@minimum_defult_time", minimum_defult_time)
+        cmd.Parameters.AddWithValue("@highest_defult_time", highest_defult_time)
         con.Open()
         cmd.ExecuteNonQuery()
         con.Close()
@@ -22,13 +24,22 @@ Public Class City_Class
         Return dt
     End Function
 
-    Sub DeleteCity(ByVal city_name)
-        Dim cmd As New SqlCommand("delete from City where city_name=@city_name ", con)
+
+    Sub Edite_City(ByVal city_name, ByVal minimum_defult_time, ByVal highest_defult_time)
+        Dim cmd As New SqlCommand("update  City  set minimum_defult_time=@minimum_defult_time,highest_defult_time=@highest_defult_time where city_name=@city_name", con)
         cmd.Parameters.AddWithValue("@city_name", city_name)
+        cmd.Parameters.AddWithValue("@minimum_defult_time", minimum_defult_time)
+        cmd.Parameters.AddWithValue("@highest_defult_time", highest_defult_time)
         con.Open()
         cmd.ExecuteNonQuery()
         con.Close()
     End Sub
 
-
+    Sub DeleteCity(ByVal city_name)
+        Dim cmd As New SqlCommand("delete from City where city_name=@city_name", con)
+        cmd.Parameters.AddWithValue("@city_name", city_name)
+        con.Open()
+        cmd.ExecuteNonQuery()
+        con.Close()
+    End Sub
 End Class

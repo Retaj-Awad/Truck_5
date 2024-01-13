@@ -14,15 +14,31 @@
             <br/>
               <asp:TextBox ID="TextBox1" runat="server" placeholder="ادخل اسم المدينة" ForeColor="Black" MaxLength="50"></asp:TextBox>
             </div>
+
+            <div>
+            <br/>
+              <asp:TextBox ID="TextBox2" runat="server" placeholder="ادخل اقل وقت متوقع" ForeColor="Black" MaxLength="50" TextMode="DateTime"></asp:TextBox>
+            </div>
+            <div>
+            <br/>
+              <asp:TextBox ID="TextBox3" runat="server" placeholder="ادخل اكثر وقت متوقع" ForeColor="Black" MaxLength="50" TextMode="DateTime"></asp:TextBox>
+            </div>
             </div >
 
             <div>
               <asp:Button ID="Button1" runat="server" Text="حفــــــظ البيانــــــات" class="btn-primary"></asp:Button>
 
-               
-       
-  <asp:LinkButton ID="LinkButton3" runat="server"   Width="550px"  class="btn btn-danger"  Visible="False">حـــــدف البيانــــــات <i class="fa fa-trash"></i></asp:LinkButton>
-                           
+                  <table>
+                    <tr>
+                        <td>
+        
+        <asp:LinkButton ID="LinkButton2" runat="server"   Width="275px"  class ="btn btn-info"  Visible="False">تعديــــل البيانــــــات <i class="fa fa-edit"></i></asp:LinkButton>
+                          </td>
+                        <td>
+           <asp:LinkButton ID="LinkButton3" runat="server"   Width="275px"  class="btn btn-danger"  Visible="False">حـــــدف البيانــــــات <i class="fa fa-trash"></i></asp:LinkButton>
+                            </td>
+                    </tr>
+                </table>
               <br/>
               <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
             </div>
@@ -49,11 +65,15 @@
               <Columns>
                   <asp:BoundField DataField="city_name" HeaderText="اسم المدينة" ReadOnly="True" 
                       SortExpression="city_name" />
+                  <asp:BoundField DataField="minimum_defult_time" HeaderText="اقل وقت افتراضي" 
+                      SortExpression="minimum_defult_time" />
+                  <asp:BoundField DataField="highest_defult_time" HeaderText="اكثر وقت افتراضي" 
+                      SortExpression="highest_defult_time" />
               </Columns>
             </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:Track_Connection %>" 
-                SelectCommand="SELECT * FROM [City] ORDER BY [city_name]">
+                SelectCommand="SELECT * FROM [City]">
 
             </asp:SqlDataSource>
             

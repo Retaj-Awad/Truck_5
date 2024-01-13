@@ -25,12 +25,14 @@
               <asp:TextBox ID="TextBox5" runat="server" placeholder="ادخل العنوان " ForeColor="Black"  TextMode="MultiLine" class=" form-control"></asp:TextBox>
             </div>
             <br/>
+            <asp:Label ID="Label_Date" runat="server" Text="Label" Visible="False"></asp:Label>
             <h6 class="text-right"> اختر تاريخ الميلاد</h6>
             <div>
               <asp:TextBox ID="TextBox6" runat="server" ForeColor="Black" TextMode="Date"></asp:TextBox>
             </div>
 
              <div>
+              <asp:Label ID="Label_img" runat="server" Text="Label" Visible="False"></asp:Label>
               <h6 class="text-right">اختر الصورة الشخصية</h6>
               <asp:FileUpload ID="FileUpload1" runat="server"></asp:FileUpload>
             </div>

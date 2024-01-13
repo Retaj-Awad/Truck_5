@@ -50,6 +50,15 @@ Partial Public Class Driver_Page
     Protected WithEvents TextBox5 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Label_Date control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label_Date As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''TextBox6 control.
     '''</summary>
     '''<remarks>
@@ -57,6 +66,15 @@ Partial Public Class Driver_Page
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TextBox6 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Label_img control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label_img As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''FileUpload1 control.
