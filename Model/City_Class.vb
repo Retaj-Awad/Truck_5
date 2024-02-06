@@ -35,6 +35,7 @@ Public Class City_Class
         con.Close()
     End Sub
 
+
     Sub DeleteCity(ByVal city_name)
         Dim cmd As New SqlCommand("delete from City where city_name=@city_name", con)
         cmd.Parameters.AddWithValue("@city_name", city_name)
@@ -42,4 +43,23 @@ Public Class City_Class
         cmd.ExecuteNonQuery()
         con.Close()
     End Sub
+
+    Function returnminimum_defult_time(ByVal city_name)
+        Dim cmd As New SqlCommand("select minimum_defult_time from City where city_name=@city_name", con)
+        cmd.Parameters.AddWithValue("@city_name", city_name)
+        Dim adp As New SqlDataAdapter(cmd)
+        Dim dt As New DataTable
+        adp.Fill(dt)
+        Return dt
+    End Function
+
+    Function returnmax_defult_time(ByVal city_name)
+        Dim cmd As New SqlCommand("select highest_defult_time from City where city_name=@city_name", con)
+        cmd.Parameters.AddWithValue("@city_name", city_name)
+        Dim adp As New SqlDataAdapter(cmd)
+        Dim dt As New DataTable
+        adp.Fill(dt)
+        Return dt
+    End Function
+
 End Class

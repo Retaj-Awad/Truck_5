@@ -73,4 +73,27 @@ Public Class Fuel_Shipment_Class
         adp.Fill(dt)
         Return dt
     End Function
+
+
+    Sub updatelaty_lony(ByVal shipment_code, ByVal laty, ByVal lony)
+        Dim cmd As New SqlCommand("update  Fuel_Shipment set laty=@laty,lony=@lony where shipment_code=@shipment_code", con)
+        cmd.Parameters.AddWithValue("@laty", laty)
+        cmd.Parameters.AddWithValue("@lony", lony)
+        cmd.Parameters.AddWithValue("@shipment_code", shipment_code)
+        con.Open()
+        cmd.ExecuteNonQuery()
+        con.Close()
+    End Sub
+
+
+    Function show_code(ByVal license_number)
+        Dim cmd As New SqlCommand("SELECT Fuel_Shipment.shipment_code,Stations.city_name FROM Fuel_Shipment INNER JOIN Truck ON Fuel_Shipment.plate_number = Truck.plate_number INNER JOIN Driver ON Truck.license_number = Driver.license_number INNER JOIN Stations ON Fuel_Shipment.station_number = Stations.station_number INNER JOIN Record_fuel ON Fuel_Shipment.shipment_code = Record_fuel.shipment_code WHERE (Driver.license_number = @license_number) AND (Record_fuel.shipment_status = @shipment_status)", con)
+        cmd.Parameters.AddWithValue("@shipment_status", "قيد التوصيل")
+        cmd.Parameters.AddWithValue("@license_number", license_number)
+        Dim adp As New SqlDataAdapter(cmd)
+        Dim dt As New DataTable
+        adp.Fill(dt)
+        Return dt
+    End Function
+
 End Class

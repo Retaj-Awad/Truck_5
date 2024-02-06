@@ -112,12 +112,6 @@
                       SortExpression="user_name" />
                   <asp:BoundField DataField="user_validity" HeaderText="الصلاحية" 
                       SortExpression="user_validity" />
-                  <asp:TemplateField>
-                      <ItemTemplate>
-                          <asp:Image ID="Image1" runat="server" Height="100px" 
-                              ImageUrl='<%# Eval("user_img","~/User_img/{0}") %>' Width="100px"  class="rounded-circle" AlternateText="لم يتم تحميل صورة"/>
-                      </ItemTemplate>
-                  </asp:TemplateField>
               </Columns>
             </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" 

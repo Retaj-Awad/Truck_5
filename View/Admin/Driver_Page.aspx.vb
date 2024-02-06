@@ -160,11 +160,18 @@
         If TextBox6.Text = "" Then
             Label1.Visible = True
             Label1.ForeColor = Drawing.Color.Red
-            Label1.Text = "يجب تاريخ الميلاد "
+            Label1.Text = "يجب  ادخال تاريخ الميلاد "
             TextBox6.Focus()
             Exit Sub
         End If
 
+
+
+        'If TextBox6.Text <> Label_Date.Text Then
+        '    Label2.Text = TextBox6.Text
+        'Else
+        '    Label2.Text = Label_Date.Text
+        'End If
 
         If FileUpload1.HasFile = True Then
             Dim exe As String = System.IO.Path.GetExtension(FileUpload1.FileName)

@@ -115,12 +115,15 @@
     <Content Include="View\Admin\City_Page.aspx" />
     <Content Include="View\Admin\Driver_Page.aspx" />
     <Content Include="View\Admin\Fuel_Shipment_Page.aspx" />
+    <Content Include="View\Admin\GPS_Page.aspx" />
     <Content Include="View\Admin\Notifcation_Page.aspx" />
     <Content Include="View\Admin\Print_Code.aspx" />
     <Content Include="View\Admin\Region_Page.aspx" />
     <Content Include="View\Admin\Station_Page.aspx" />
     <Content Include="View\Admin\Truck_Page.aspx" />
     <Content Include="View\Admin\User_Page.aspx" />
+    <Content Include="View\Home\Driver_Page.aspx" />
+    <Content Include="View\Home\GPS_Page.aspx" />
     <Content Include="View\Home\Home_Page.aspx" />
     <Content Include="View\Security\Check_Page.aspx" />
     <Content Include="View\Security\Driver_Page.aspx" />
@@ -191,6 +194,13 @@
       <DependentUpon>Fuel_Shipment_Page.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="View\Admin\GPS_Page.aspx.designer.vb">
+      <DependentUpon>GPS_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\GPS_Page.aspx.vb">
+      <DependentUpon>GPS_Page.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="View\Admin\Notifcation_Page.aspx.designer.vb">
       <DependentUpon>Notifcation_Page.aspx</DependentUpon>
     </Compile>
@@ -231,6 +241,20 @@
     </Compile>
     <Compile Include="View\Admin\User_Page.aspx.vb">
       <DependentUpon>User_Page.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="View\Home\Driver_Page.aspx.designer.vb">
+      <DependentUpon>Driver_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Home\Driver_Page.aspx.vb">
+      <DependentUpon>Driver_Page.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="View\Home\GPS_Page.aspx.designer.vb">
+      <DependentUpon>GPS_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Home\GPS_Page.aspx.vb">
+      <DependentUpon>GPS_Page.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="View\Home\Home_Page.aspx.designer.vb">
@@ -317,7 +341,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>52816</DevelopmentServerPort>
+          <DevelopmentServerPort>58340</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
