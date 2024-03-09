@@ -119,6 +119,7 @@
     <Content Include="View\Admin\Notifcation_Page.aspx" />
     <Content Include="View\Admin\Print_Code.aspx" />
     <Content Include="View\Admin\Region_Page.aspx" />
+    <Content Include="View\Admin\Report_page.aspx" />
     <Content Include="View\Admin\Station_Page.aspx" />
     <Content Include="View\Admin\Truck_Page.aspx" />
     <Content Include="View\Admin\User_Page.aspx" />
@@ -129,6 +130,7 @@
     <Content Include="View\Security\Driver_Page.aspx" />
     <Content Include="View\Security\Stop_Page.aspx" />
     <Content Include="View\Security\Truck_Page.aspx" />
+    <Content Include="View\Station\Station_Page.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -222,6 +224,13 @@
       <DependentUpon>Region_Page.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="View\Admin\Report_page.aspx.designer.vb">
+      <DependentUpon>Report_page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Report_page.aspx.vb">
+      <DependentUpon>Report_page.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="View\Admin\Station_Page.aspx.designer.vb">
       <DependentUpon>Station_Page.aspx</DependentUpon>
     </Compile>
@@ -299,6 +308,13 @@
       <DependentUpon>Truck_Page.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="View\Station\Station_Page.aspx.designer.vb">
+      <DependentUpon>Station_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Station\Station_Page.aspx.vb">
+      <DependentUpon>Station_Page.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -331,7 +347,6 @@
     <Folder Include="Controller\Home\" />
     <Folder Include="Driver_img\" />
     <Folder Include="User_img\" />
-    <Folder Include="View\Station\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -341,7 +356,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>58340</DevelopmentServerPort>
+          <DevelopmentServerPort>60129</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

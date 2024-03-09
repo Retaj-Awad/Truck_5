@@ -18,9 +18,9 @@ Public Class Home_Page
                     Session("security") = TextBox1.Text
                     Response.Redirect("~/View/Security/Check_Page.aspx")
                 Else
-                    Label1.Visible = True
-                    Label1.Text = " المحطة"
-                    Label1.ForeColor = Drawing.Color.Blue
+                    Session("employee_station") = TextBox1.Text
+                    Session("station_number") = dt.Rows(0).Item("station_number")
+                    Response.Redirect("~/View/Station/Station_Page.aspx")
                 End If
 
             Else

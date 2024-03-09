@@ -17,11 +17,11 @@
 
             <div>
             <br/>
-              <asp:TextBox ID="TextBox2" runat="server" placeholder="ادخل اقل وقت متوقع" ForeColor="Black" MaxLength="50" TextMode="DateTime"></asp:TextBox>
+              <asp:TextBox ID="TextBox2" runat="server" placeholder="ادخل اقل وقت متوقع" ForeColor="Black" MaxLength="50" ></asp:TextBox>
             </div>
             <div>
             <br/>
-              <asp:TextBox ID="TextBox3" runat="server" placeholder="ادخل اكثر وقت متوقع" ForeColor="Black" MaxLength="50" TextMode="DateTime"></asp:TextBox>
+              <asp:TextBox ID="TextBox3" runat="server" placeholder="ادخل اكثر وقت متوقع" ForeColor="Black" MaxLength="50"></asp:TextBox>
             </div>
             </div >
 

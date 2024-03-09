@@ -1,10 +1,10 @@
-﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Admin_Master.master.vb" Inherits="track_web.Admin_Master" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Station_Page.aspx.vb" Inherits="track_web.Station_Page1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-<!-- Basic -->
+     <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- Mobile Metas -->
@@ -14,7 +14,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Admin Page</title>
+  <title>Check Page</title>
 
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
@@ -26,11 +26,10 @@
   <!-- Custom styles for this template -->
   <link href="../../css/style.css" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="../../css/responsive.css" rel="stylesheet" />4
-
+  <link href="../../css/responsive.css" rel="stylesheet" />
 </head>
 <body>
-     <form id="form1" runat="server">
+    <form id="form1" runat="server">
     <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
@@ -65,31 +64,7 @@
               <span class=""> </span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent" dir="rtl">
-              <ul class="navbar-nav ">
-                <li class="nav-item active">
-                  <a class="nav-link" href="User_Page.aspx">بيانات المستخدمين <i class="fa fa-user-circle"> </i><span class="sr-only">(current)</span></a>
-                </li>
-                 <li class="nav-item">
-                  <a class="nav-link" href="Truck_Page.aspx">بيانات الشاحنة <i class="fa fa-car"> </i></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="Station_Page.aspx"> بيانات المحطة <i class="fa fa-home"> </i></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="Fuel_Shipment_Page.aspx">بيانات الشحنة <i class="fa fa-transgender"> </i></a>
-                </li>
-                 <li class="nav-item">
-                 <asp:LinkButton ID="LinkButton2"  class="nav-link" runat="server" >الاشعارات <i class="fa fa-bell"> </i> <asp:Label ID="Label2" runat="server" Text="0" ForeColor="#CC0000"></asp:Label></asp:LinkButton>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="GPS_Page.aspx">تتبع شاحنات الوقود GPS <i class="fa fa-map"> </i></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="Report_page.aspx">تقارير عن الشحنات<i class="fa fa-print"> </i></a>
-                </li>
-              </ul>
-            </div>
+            
           </nav>
         </div>
       </div>
@@ -126,12 +101,109 @@
   </div>
 
   
-
+    
   <!-- contact section -->
 
-  <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
+  <section class="contact_section layout_padding">
+     <div class="container">
+      <div class="heading_container" dir="rtl">
+        <h2>
+            تتبع شاحنات الوقود GPS 
+        </h2>
+      </div>
+      <div class="row" dir="rtl">
+        <div class="col-md-6">
+          <div>
+            <div>
+            <br/>
+              <asp:TextBox ID="TextBox1" runat="server" placeholder="ادخل كود الشحنة" ForeColor="Black" MaxLength="50"></asp:TextBox>
+            </div>
+       
+            </div >
 
+            <div>
+              <asp:Button ID="Button1" runat="server" Text="  عرض الموقع على GPS" class="btn-primary" Visible="False"></asp:Button>
+              <asp:Button ID="Button2" runat="server" Text="  عرض بيانات الشحنة" class="btn-primary"></asp:Button>
+              <br/>
+              <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
+            </div>
+          </div>
+        </div>
+        <br/>
+        <div class="row" dir="rtl">
+        <div class="col-md-6">
+        
+          <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+                DataKeyNames="shipment_code" DataSourceID="SqlDataSource1" width="700px" 
+                GridLines="None" Visible="False">
+              <Columns>
+                  <asp:BoundField DataField="shipment_code" HeaderText="كود الشحنة" ReadOnly="True" 
+                      SortExpression="shipment_code" InsertVisible="False" />
+                  <asp:BoundField DataField="city_name" HeaderText="المدينة" 
+                      SortExpression="city_name" />
+                  <asp:BoundField DataField="region_name" HeaderText="المنطقة" 
+                      SortExpression="region_name" />
+                  <asp:BoundField DataField="station_number" HeaderText="رقم المحطة" 
+                      SortExpression="station_number" />
+                  <asp:BoundField DataField="station_name" 
+                      HeaderText="المحطة" SortExpression="station_name" />
+                  <asp:BoundField DataField="quantity" HeaderText="الكمية" 
+                      SortExpression="quantity" />
+                  <asp:BoundField DataField="plate_number" HeaderText="رقم اللوحة" 
+                      SortExpression="plate_number" />
+                  <asp:BoundField DataField="driver_name" HeaderText="السائق" 
+                      SortExpression="driver_name" />
+                  <asp:BoundField DataField="phone_number" HeaderText="هاتف السائق" 
+                      SortExpression="phone_number" />
+              </Columns>
+            </asp:GridView>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:Track_Connection %>" 
+                
+                SelectCommand="SELECT Fuel_Shipment.shipment_code, Fuel_Shipment.region_name, Fuel_Shipment.quantity, Fuel_Shipment.plate_number, Stations.station_name, Stations.city_name, Driver.driver_name, Driver.phone_number, Fuel_Shipment.station_number FROM Fuel_Shipment INNER JOIN Stations ON Fuel_Shipment.station_number = Stations.station_number INNER JOIN Truck ON Fuel_Shipment.plate_number = Truck.plate_number INNER JOIN Driver ON Truck.license_number = Driver.license_number WHERE (Fuel_Shipment.shipment_code = @shipment_code) AND (Fuel_Shipment.station_number = @station_number)">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="TextBox1" Name="shipment_code" 
+                        PropertyName="Text" />
+                    <asp:SessionParameter Name="station_number" SessionField="station_number" />
+                </SelectParameters>
+
+            </asp:SqlDataSource>
+            
+
+            
+          </div>
+         </div>
+          <br/>
+           <br/>
+           <div class="row" dir="rtl">
+           <table>
+                <tr>
+                    <td>
+                   <h4 align="right">حدد حالة الشحنة</h4>
+                       <asp:DropDownList ID="DropDownList1" runat="server" class=" form-control"  Height="50"  Width="400px">
+                           <asp:ListItem>تم الاستلام</asp:ListItem>
+                           <asp:ListItem>تم الرفض</asp:ListItem>
+                        </asp:DropDownList> 
+                        </td>
+                     <td>
+                    <br/>
+                     <asp:LinkButton ID="LinkButton2" runat="server" class="btn btn-success"  Height="50"
+                     Width="200px" Visible="False">ارســـال البيانــــــات <i class="fa fa-send"></i></asp:LinkButton>
+                     <br/>
+                     <asp:Label ID="Label2" runat="server" Text="Label" Visible="False"></asp:Label>
+                   </td>
+                        </tr>
+                         <tr>
+                      <td>
+                      <br/>
+                        <asp:TextBox ID="TextBox2" runat="server" placeholder="ملاحظات" 
+                            ForeColor="Black" MaxLength="50" Width="400px" TextMode="MultiLine" class=" form-control" ></asp:TextBox>
+                    </td>
+                    </tr>
+            </table>
+     </div>
+      </div>
+  </section>
   <!-- end contact section -->
 
 
